@@ -7,7 +7,9 @@ customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-b
 app = customtkinter.CTk()  # create CTk window like you do with the Tk window
 app.geometry("400x800")
 
-addroombutton = customtkinter.CTkButton(master=app,text="Create room", command=button_function)
+
+
+# addroombutton = customtkinter.CTkButton(master=app,text="Create room", command=button_function)
 
 #adding a room we will want to make this selectable from a list
 #also write this size to a list using a matrix array that has a length of 16 and a height depending on the amount of locations
