@@ -7,7 +7,8 @@ customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-b
 app = customtkinter.CTk()  # create CTk window like you do with the Tk window
 app.geometry("400x800")
 
-
+inputlabel = customtkinter.CTkLabel(root, text="Enter User ID:")
+inputuserid = customtkinter.CTkEntry(root) 
 
 # addroombutton = customtkinter.CTkButton(master=app,text="Create room", command=button_function)
 
