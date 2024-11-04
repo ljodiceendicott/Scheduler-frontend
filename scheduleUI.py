@@ -1,5 +1,6 @@
 import customtkinter
 import scheduler_obj
+import apicalls
 
 customtkinter.set_appearance_mode("dark")  # Modes: system (default), light, dark
 customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-blue, green
@@ -7,9 +8,29 @@ customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-b
 app = customtkinter.CTk()  # create CTk window like you do with the Tk window
 app.geometry("400x800")
 
-inputlabel = customtkinter.CTkLabel(root, text="Enter User ID:")
-inputuserid = customtkinter.CTkEntry(root) 
+def responsedetermine():
+    if(dropdown.get()=="Person"):
+        uservalue = userid.get()
+        #Clear Values
+        userid.delete(0,len(uservalue))
+        print(uservalue)
 
+label = customtkinter.CTkLabel(app, text="Are you looking for a Person or Team:")
+dropdown = customtkinter.CTkComboBox(app, values=["Please Make a Selection","Person","Team"])
+label2 = customtkinter.CTkLabel(app, text="Enter User ID:")
+userid = customtkinter.CTkEntry(app)
+label3 = customtkinter.CTkLabel(app, text="Enter Team ID:")
+Teamid = customtkinter.CTkEntry(app)
+
+sendtoapi = customtkinter.CTkButton(app, text="Get Schdeule info", command=responsedetermine)
+
+
+label.pack()
+dropdown.pack()
+label2.pack()
+userid.pack()
+label3.pack()
+sendtoapi.pack()
 # addroombutton = customtkinter.CTkButton(master=app,text="Create room", command=button_function)
 
 #adding a room we will want to make this selectable from a list
